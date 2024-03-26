@@ -85,6 +85,9 @@ section {
 }
 
 /* header */
+.logo{
+  width: 100px;
+}
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
     url(../assets/workSpace.jpg);
@@ -173,9 +176,12 @@ color: white;
   transition: var(--transition);
   display: none;
 }
-.btn-trans:hover {
-  background: var(--mount-meadow);
+.btn-trans a:hover {
   border-color: var(--mount-meadow);
+}
+.btn-trans:hover{
+  background: var(--mount-meadow);
+
 }
 .btn-white {
   background: #fff;
@@ -186,6 +192,11 @@ color: white;
   background: transparent;
   color: #fff;
 }
+.btn-white a:hover {
+
+  color: #fff;
+}
+
 
 /* detail */
 .detail {
@@ -350,6 +361,9 @@ color: white;
 }
 .team-img img{
   border-radius: 10px;
+  background-size: cover;
+  object-fit: cover;
+  height: 210px;
 
 }
 .team-icons {
@@ -544,19 +558,7 @@ img {
   width: 30px;
   height: 30px;
 }
-.uil-check {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M18.71 7.21a1 1 0 0 0-1.42 0l-7.45 7.46l-3.13-3.14A1 1 0 1 0 5.29 13l3.84 3.84a1 1 0 0 0 1.42 0l8.16-8.16a1 1 0 0 0 0-1.47'/%3E%3C/svg%3E");
-  background-color: currentColor;
-  -webkit-mask-image: var(--svg);
-  mask-image: var(--svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-}
+
 .card__header-circle {
   width: 40px;
   height: 40px;
@@ -932,6 +934,9 @@ textarea {
 }
 
 @media screen and (max-width: 569px) {
+  .logo{
+    width: 70px;
+  }
    .about .row{
     grid-template-columns: repeat(1, 1fr);
   }

@@ -90,7 +90,9 @@ $(document).on("click", "#send-it", function () {
     )
       var d = "whatsapp://send";
     var g = d + "?phone=" + e + f;
+    a.value = ""
     window.open(g, "_blank");
+
   }
 }),
   $(document).on("click", ".informasi", function () {
@@ -117,9 +119,17 @@ $(document).on("click", "#send-it", function () {
 // form
 document.querySelector("#contact-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  e.target.elements.name.value = "";
-  e.target.elements.email.value = "";
-  e.target.elements.message.value = "";
+
+  let param = {
+    name: e.target.elements.name.value,
+    email: e.target.elements.email.value,
+    message: e.target.elements.message.value,
+  };
+  console.log(param);
+
+  emailjs
+    .send("service_1ivus56", "template_72sjy16", param)
+    .then(alert("your mail has been sent"));
 });
 
 /**
@@ -150,18 +160,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // accordion function
 
- 
-
-
 // send data from form to email
-function emailSend() {
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Username: "victoryakubu09@gmail.com",
-    Password: "34F93B12E7C2427CA0B5D8E04DDC26FDBD5C",
-    To: "frwebglobal@gmail.com",
-    From: "victoryakubu09@gmail.com",
-    Subject: "This is the subject",
-    Body: "And this is the body",
-  }).then((message) => alert(message));
-}
+
