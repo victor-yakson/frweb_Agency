@@ -43,6 +43,11 @@ button {
   outline: 0;
   background: transparent;
 }
+button[disabled] {
+  background-color: #6c757d; /* Disabled button color */
+  cursor: not-allowed;
+}
+
 .container {
   max-width: 1320px;
   margin: 0 auto;
@@ -442,7 +447,7 @@ padding: 10px 20px;
   transition: var(--transition);
 }
 .show-faq-content {
-  height: 168px;
+  height: max-content;
   padding: 0.6rem 1.8rem;
 }
 
@@ -819,10 +824,11 @@ textarea {
   margin: 10px 0;
   padding: 10px;
   outline: none;
-  border-radius: 5px;
-  border-width: 3px; /* Adjust the width of the border as needed */
+  border-width: 1px; /* Adjust the width of the border as needed */
   border-style: solid;
   border-image: linear-gradient(to right, #00796b, #fbc02d) 1; 
+  border-radius: 5px !important;
+
 }
 .col-sm-12 {
   width: 100% ;
@@ -835,7 +841,6 @@ textarea {
   overflow: hidden;
   transition: all 0.2s ease-in-out;
     background: linear-gradient(to right, #00796b, #fbc02d);
-  
     border-radius: 5px;
   padding: 10px;
   border: none;
@@ -1367,6 +1372,7 @@ a.close-chat {
     color: #878787;
     text-transform: capitalize;
   }
+  
   .subscribe-form {
     position: relative;
     overflow: hidden;

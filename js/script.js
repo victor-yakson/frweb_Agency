@@ -90,9 +90,8 @@ $(document).on("click", "#send-it", function () {
     )
       var d = "whatsapp://send";
     var g = d + "?phone=" + e + f;
-    a.value = ""
+    a.value = "";
     window.open(g, "_blank");
-
   }
 }),
   $(document).on("click", ".informasi", function () {
@@ -119,6 +118,7 @@ $(document).on("click", "#send-it", function () {
 // form
 document.querySelector("#contact-form").addEventListener("submit", (e) => {
   e.preventDefault();
+  document.querySelector("#submit").disabled = true;
 
   let param = {
     name: e.target.elements.name.value,
@@ -126,11 +126,29 @@ document.querySelector("#contact-form").addEventListener("submit", (e) => {
     message: e.target.elements.message.value,
   };
   console.log(param);
-
   emailjs
     .send("service_1ivus56", "template_72sjy16", param)
-    .then(alert("your mail has been sent"));
+    .then(() => {
+      // Display success message without causing layout recalculations
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Your mail has been sent',
+        confirmButtonText: 'Okay'
+      });
+      e.target.elements.name.value = '';
+      e.target.elements.email.value = '';
+      e.target.elements.message.value = '';
+
+      document.querySelector("#submit").disabled = false;
+
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      // Handle errors if necessary
+    });
 });
+
 
 /**
  * Readmore
@@ -161,4 +179,3 @@ document.addEventListener("DOMContentLoaded", function () {
 // accordion function
 
 // send data from form to email
-

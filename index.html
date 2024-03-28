@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>FRweb</title>
-    <meta name="description" content="" />
+    <meta name="description" content="website, hotel builder, agency " />
+    <meta name="description" content="FRweb is a Website Design &amp; Digital Marketing Agency based kano, Nigeria. Our services include Web Design, Online Advertising, Information Mgt Systems. ">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- browser icon -->
+    <link rel="icon" href="./assets/final frweb logo.svg" type="image/svg+xml">
     <!-- normalize css -->
-
     <link rel="stylesheet" href="resources/normalize.css" />
     <!-- font -->
     <link rel="stylesheet" href="resources/font.css" />
@@ -25,6 +27,8 @@
       rel="stylesheet"
       href="resources/Magnific-Popup-master/dist/magnific-popup.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
     <!-- owl carousel -->
     <link
       rel="stylesheet"
@@ -51,6 +55,10 @@
     </script>
   </head>
   <body>
+    <div id="success-popup" class="white-popup mfp-hide">
+      <h2>Your mail has been sent</h2>
+      <button id="close-popup" class="btn">Okay</button>
+    </div>
     <!-- header -->
     <header class="header" id="intro">
       <nav class="navbar">
@@ -164,7 +172,7 @@
       <div class="container">
         <div class="row">
           <div
-            class="detail-item animate__animated animate__fadeInLeft animate__slow"
+            class="detail-item wow animate__animated animate__fadeInLeft animate__slow"
           >
             <span><i class="fas fa-tablet-alt"></i></span>
             <h2>Responsive APP and Web Development?</h2>
@@ -178,7 +186,7 @@
           </div>
 
           <div
-            class="detail-item  animate__animated animate__fadeInUp animate__slow"
+            class="detail-item wow animate__animated animate__fadeInUp animate__slow"
           >
             <span> <i class="fas fa-question"></i> </span>
             <h2>Consultation</h2>
@@ -192,7 +200,7 @@
           </div>
 
           <div
-            class="detail-item  animate__animated animate__fadeInLeft animate__slow"
+            class="detail-item wow animate__animated animate__fadeInLeft animate__slow"
           >
             <span><i class="far fa-bell"></i></span>
             <h2>24 Hour Support</h2>
@@ -206,7 +214,7 @@
             </p>
           </div>
           <div
-            class="detail-item  animate__animated animate__fadeInUp animate__slow"
+            class="detail-item wow animate__animated animate__fadeInUp animate__slow"
           >
             <span> <i class="far fa-credit-card"></i> </span>
             <h2>Payment services</h2>
@@ -228,9 +236,9 @@
       <div class="container">
         <div class="row">
           <div
-            class="feature-left wow animate__animated animate__fadeInUp animate__slow"
+            class="feature-left wow animate__animated animate__fadeInLeft animate__slow"
           >
-            <img src="assets/features-mockup.png" alt="" />
+            <img src="assets/features-mockup_frweb.png" alt="" />
           </div>
           <div
             class="feature-right wow animate__animated animate__fadeInUp animate__slow"
@@ -795,7 +803,6 @@
           id="contact-form"
           class="form-horizontal"
           role="form"
-          onsubmit=" reset()"
         >
           <div
             class="form-group wow animate__animated animate__fadeInUp animate__slow"
@@ -807,7 +814,6 @@
                 id="name"
                 placeholder="NAME"
                 name="name"
-                value=""
                 required
               />
             </div>
@@ -963,8 +969,8 @@
                 </div>
                 <div class="subscribe-form">
                   <form action="#">
-                    <input type="text" placeholder="Email Address" />
-                    <button><i class="fab fa-telegram-plane"></i></button>
+                    <input type="text" placeholder="Email Address" disabled/>
+                    <button disabled  ><i class="fab fa-telegram-plane"></i></button>
                   </form>
                 </div>
               </div>
@@ -1070,8 +1076,8 @@
     <script src="resources/OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
     <!-- wow js -->
     <script src="resources/WOW-master/dist/wow.js"></script>
-    <!-- smtpjs to -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!--sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- custom js -->
     <script src="js/script.js"></script>
